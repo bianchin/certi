@@ -32,7 +32,7 @@ public class NumeroExtensoUtils {
     private static final String NEGATIVE = "menos";
 
     public static String converter(final int number) {
-        validate(number);
+        validar(number);
 
         // Caso for zero, já retorna sem passar pelo algorítimo
         if (number==0) {
@@ -45,7 +45,7 @@ public class NumeroExtensoUtils {
         //Pega os blocos de centena e transforma em extenso. Dentro de cada bloco é a mesma regra, só colocando mil ou nada
         for (int i = 0; i < conjuntos.length; i++) {
             String separacao = extenso.trim().isEmpty() ? "" : " e ";
-            extenso = formatCentena(Integer.valueOf(conjuntos[conjuntos.length - i - 1])) + MILHAR[i] + separacao + extenso;
+            extenso = formataCentena(Integer.valueOf(conjuntos[conjuntos.length - i - 1])) + MILHAR[i] + separacao + extenso;
         }
 
         //Veritica se é negativo para colocar o menos na frente
@@ -56,7 +56,7 @@ public class NumeroExtensoUtils {
         return extenso;
     }
 
-    private static void validate(int number) {
+    private static void validar(int number) {
         if (number > 99999 || number < -99999) {
             throw new RuntimeException("O número deve ser entre -99.999 e 99.999");
         }
@@ -79,7 +79,7 @@ public class NumeroExtensoUtils {
      * @param number
      * @return
      */
-    private static String formatCentena(int number) {
+    private static String formataCentena(int number) {
         String conjunto = String.valueOf(number);
         if(Math.log10(Integer.valueOf(conjunto)) % 1 == 0) {
             return LOG_10[(int)conjunto.chars().filter(ch -> ch == '0').count()];

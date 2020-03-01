@@ -32,7 +32,7 @@ sudo docker run -p 3000:3000 -t gianbm/certi
 
 ##### Algorítimo
 
-Foi desenvolvido um algorítmo disponível na classe [NumberInFull](src/main/java/br/org/certi/utils/NumberInFull.java)
+Foi desenvolvido um algorítmo disponível na classe [NumeroExtensoUtils](src/main/java/br/org/certi/utils/NumeroExtensoUtils.java)
 
 
 ##### Usado a API
