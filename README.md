@@ -21,6 +21,12 @@ mvn spring-boot:run
 ## Docker
 
 
+Foi criado uma imagem docker disponivel no [repositório](https://hub.docker.com/repository/docker/gianbm/certi/)
+
+
+```
+sudo docker run -p 3000:3000 -t gianbm/certi
+```
 
 ## Solução
 

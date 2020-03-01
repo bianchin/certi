@@ -1,18 +1,3 @@
-/*
- * Copyright 2016 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *	  https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package br.org.certi;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -31,43 +16,43 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 public class NumeroExtensoControllerTests {
 
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
     @Test
     public void converter0() throws Exception {
         assertNumber(0, "zero");
     }
 
-	@Test
-	public void converter1() throws Exception {
-		assertNumber(1, "um");
-	}
+    @Test
+    public void converter1() throws Exception {
+        assertNumber(1, "um");
+    }
 
     @Test
     public void converter_1() throws Exception {
         assertNumber(-1, "menos um");
     }
 
-	@Test
-	public void converter2() throws Exception {
-		assertNumber(2, "dois");
-	}
+    @Test
+    public void converter2() throws Exception {
+        assertNumber(2, "dois");
+    }
 
-	@Test
-	public void converter10() throws Exception {
-		assertNumber(10, "dez");
-	}
+    @Test
+    public void converter10() throws Exception {
+        assertNumber(10, "dez");
+    }
 
-	@Test
-	public void converter11() throws Exception {
-		assertNumber(11, "onze");
-	}
+    @Test
+    public void converter11() throws Exception {
+        assertNumber(11, "onze");
+    }
 
-	@Test
-	public void converter20() throws Exception {
-		assertNumber(20, "vinte");
-	}
+    @Test
+    public void converter20() throws Exception {
+        assertNumber(20, "vinte");
+    }
 
     @Test
     public void converter35() throws Exception {
@@ -84,20 +69,20 @@ public class NumeroExtensoControllerTests {
         assertNumber(54, "cinquenta e quatro");
     }
 
-	@Test
-	public void converter99() throws Exception {
-		assertNumber(99, "noventa e nove");
-	}
+    @Test
+    public void converter99() throws Exception {
+        assertNumber(99, "noventa e nove");
+    }
 
-	@Test
-	public void converter100() throws Exception {
-		assertNumber(100, "cem");
-	}
+    @Test
+    public void converter100() throws Exception {
+        assertNumber(100, "cem");
+    }
 
-	@Test
-	public void converter101() throws Exception {
-		assertNumber(101, "cento e um");
-	}
+    @Test
+    public void converter101() throws Exception {
+        assertNumber(101, "cento e um");
+    }
 
     @Test
     public void converter265() throws Exception {
@@ -175,8 +160,8 @@ public class NumeroExtensoControllerTests {
     }
 
     private void assertNumber(Integer numero, String extenso) throws Exception {
-		this.mockMvc.perform(get("/" +  numero)).andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.extenso").value(extenso));
-	}
+        this.mockMvc.perform(get("/" + numero)).andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$.extenso").value(extenso));
+    }
 
 }
