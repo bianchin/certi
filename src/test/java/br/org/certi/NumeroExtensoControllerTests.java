@@ -164,14 +164,14 @@ public class NumeroExtensoControllerTests {
         assertNumber(-99999, "menos noventa e nove mil e novecentos e noventa e nove");
     }
 
-    //@Test
+    @Test
     public void converter100000Error() throws Exception {
-        this.mockMvc.perform(get("/10000")).andDo(print()).andExpect(status().is5xxServerError());
+        this.mockMvc.perform(get("/100000")).andDo(print()).andExpect(status().is5xxServerError());
     }
 
-    //@Test
+    @Test
     public void converter_100000Error() throws Exception {
-        this.mockMvc.perform(get("/-10000")).andDo(print()).andExpect(status().is5xxServerError());
+        this.mockMvc.perform(get("/-100000")).andDo(print()).andExpect(status().is5xxServerError());
     }
 
     private void assertNumber(Integer numero, String extenso) throws Exception {

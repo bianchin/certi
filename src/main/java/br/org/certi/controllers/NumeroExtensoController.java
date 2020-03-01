@@ -1,6 +1,9 @@
 package br.org.certi.controllers;
 
 import br.org.certi.dto.Numero;
+import br.org.certi.exception.Error;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,5 +26,17 @@ public class NumeroExtensoController {
 				.aNumero()
 				.withNumero(number)
 				.build();
+	}
+
+	@GetMapping("/")
+	public ResponseEntity path() {
+		return ResponseEntity
+				.status(HttpStatus.NOT_FOUND)
+				.body(
+						Error.ErrorBuilder
+								.anError()
+								.withMessage("Usar host:port/{Número a ser convertido}")
+								.build()
+				);
 	}
 }
