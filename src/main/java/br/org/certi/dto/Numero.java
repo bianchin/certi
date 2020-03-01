@@ -1,6 +1,6 @@
 package br.org.certi.dto;
 
-import br.org.certi.utils.NumberInFull;
+import br.org.certi.utils.NumeroExtensoUtils;
 
 public class Numero {
 
@@ -31,7 +31,7 @@ public class Numero {
 
         public Numero build() {
             Numero numero = new Numero();
-            numero.extenso = NumberInFull.convert(this.numero);
+            numero.extenso = NumeroExtensoUtils.converter(this.numero);
             return numero;
         }
     }

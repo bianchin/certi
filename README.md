@@ -20,7 +20,6 @@ mvn spring-boot:run
 
 ## Docker
 
-
 Foi criado uma imagem docker disponivel no [repositório](https://hub.docker.com/repository/docker/gianbm/certi/)
 
 
@@ -29,6 +28,11 @@ sudo docker run -p 3000:3000 -t gianbm/certi
 ```
 
 ## Solução
+
+
+##### Algorítimo
+
+Foi desenvolvido um algorítmo disponível na classe [NumberInFull](src/main/java/br/org/certi/utils/NumberInFull.java)
 
 
 ##### Usado a API
